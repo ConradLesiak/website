@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Portfolio</title>
+  <title>Conrad Lesiak | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="index.js"></script>
 </head>
 <body>
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header>
     <nav>
-      <h1 class="logo">MyPortfolio</h1>
+      <div class="logo">Conrad Lesiak</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -21,9 +23,9 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-text">
-      <h2>Hello, I'm <span class="highlight">[Your Name]</span></h2>
-      <p>Computer Science Developer & Game Designer</p>
+    <div>
+      <h2>Hello, I'm <span class="highlight">Conrad Lesiak</span></h2>
+      <p>Aspiring Computer Science Developer & Game Designer</p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
   </section>
@@ -32,46 +34,99 @@
   <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-      I am a passionate developer with experience in computer science, 
-      game design, and interactive applications. My goal is to create 
-      engaging software and games that merge technical expertise with creativity.
+      I am a computer science graduate with a passion for software development and game design.
+      I have built several personal projects including web apps and games, and I’m eager to grow my expertise further in a professional environment.
     </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="job">
+        <h3>UPS Package Handler</h3>
+        <p>Worked in a fast-paced environment, managing and sorting packages efficiently.</p>
+      </div>
+      <div class="job">
+        <h3>Jewel-Osco Deli Clerk</h3>
+        <p>Provided customer service, prepared food, and maintained a clean and organized department.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="project-grid">
+
+      <!-- Project 1 -->
       <div class="project-card">
-        <h3>Game Engine Prototype</h3>
-        <p>A custom-built 2D game engine using Java and OpenGL.</p>
+        <h3>Movie Chat App</h3>
+        <p>
+          A chat application where users can discuss movies in real-time. Built as a personal
+          project to practice front-end and back-end integration.
+        </p>
+        <div class="image-scroll-wrapper">
+          <button class="scroll-btn left">&#9664;</button>
+          <div class="image-scroll">
+            <img src="images/movie1.png" alt="Movie Chat App Screenshot 1">
+            <img src="images/movie2.png" alt="Movie Chat App Screenshot 2">
+            <img src="images/movie3.png" alt="Movie Chat App Screenshot 3">
+          </div>
+          <button class="scroll-btn right">&#9654;</button>
+        </div>
       </div>
+
+      <!-- Project 2 -->
       <div class="project-card">
-        <h3>AI Pathfinding</h3>
-        <p>Implementation of A* and Dijkstra algorithms for game NPC movement.</p>
+        <h3>Siege World Game</h3>
+        <p>
+          A strategy game with interactive mechanics and AI-driven opponents.
+          Developed to practice game logic, AI, and user interaction.
+        </p>
+        <div class="image-scroll-wrapper">
+          <button class="scroll-btn left">&#9664;</button>
+          <div class="image-scroll">
+            <img src="images/siege1.png" alt="Siege World Screenshot 1">
+            <img src="images/siege2.png" alt="Siege World Screenshot 2">
+            <img src="images/siege3.png" alt="Siege World Screenshot 3">
+          </div>
+          <button class="scroll-btn right">&#9654;</button>
+        </div>
       </div>
+
+      <!-- Project 3 -->
       <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>The very site you're viewing! Built with HTML, CSS, and JavaScript.</p>
+        <h3>Flappy Forest Mobile Game</h3>
+        <p>
+          A mobile game inspired by Flappy Bird with forest-themed visuals.
+          Focused on mobile game mechanics and basic physics.
+        </p>
+        <div class="image-scroll-wrapper">
+          <button class="scroll-btn left">&#9664;</button>
+          <div class="image-scroll">
+            <img src="images/flappy1.png" alt="Flappy Forest Screenshot 1">
+            <img src="images/flappy2.png" alt="Flappy Forest Screenshot 2">
+            <img src="images/flappy3.png" alt="Flappy Forest Screenshot 3">
+          </div>
+          <button class="scroll-btn right">&#9654;</button>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section">
     <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
+    <p class="email">
+      You can reach me at: <a href="mailto:lesiakconrad@gmail.com">lesiakconrad@gmail.com</a>
+    </p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <p>&copy; 2025 Conrad Lesiak. All Rights Reserved.</p>
   </footer>
-
-  <script src="index.js"></script>
 </body>
 </html>

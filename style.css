@@ -1,54 +1,63 @@
-/* General Styles */
-body {
+/* General Reset */
+body, h1, h2, h3, p, ul, li {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Navigation */
+body {
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
 header {
-  background: #111;
-  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 30px;
 }
 
 .logo {
-  color: #fff;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 20px;
 }
 
 .nav-links a {
-  color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
+  color: #333;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: #ff4757;
+  color: #0077b6;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-  height: 90vh;
-  background: linear-gradient(to right, #1e1e2f, #3a3a6a);
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #0077b6;
   color: #fff;
 }
 
@@ -57,27 +66,30 @@ nav {
 }
 
 .highlight {
-  color: #ff4757;
+  color: #ffd166;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 10px 20px;
-  background: #ff4757;
-  color: #fff;
-  text-decoration: none;
+  background: #ffd166;
+  color: #333;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
   transition: background 0.3s;
 }
 
 .btn:hover {
-  background: #e84118;
+  background: #ffb703;
 }
 
-/* Sections */
+/* Section */
 .section {
   padding: 60px 20px;
+  max-width: 1100px;   /* a bit wider to comfortably fit 3 cards */
+  margin: auto;
   text-align: center;
 }
 
@@ -86,18 +98,33 @@ nav {
   margin-bottom: 20px;
 }
 
-/* Projects */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* Timeline / Experience */
+.timeline {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  text-align: left;
+}
+
+.job h3 {
+  margin-bottom: 5px;
+}
+
+/* Projects - Flexbox layout */
+.project-grid {
+  display: flex;
+  flex-wrap: nowrap;        /* keep all three on one row for desktop */
+  gap: 20px;
+  justify-content: center;  /* center the trio */
 }
 
 .project-card {
+  flex: 0 1 320px;          /* base width ~320px; don’t grow past */
   background: #fff;
-  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
   transition: transform 0.3s;
 }
 
@@ -105,31 +132,101 @@ nav {
   transform: translateY(-5px);
 }
 
-/* Contact Form */
-form {
+/* Image Scroll Boxes with Buttons Inside */
+.image-scroll-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.image-scroll {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin: auto;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  border-radius: 8px;
+  position: relative;
 }
 
-form input, form textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+.image-scroll img {
+  height: 150px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
 }
 
-form button {
+.image-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* Scroll buttons inside image box */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);   /* transparent black; swap to rgba(0,119,182,.5) for blue */
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
 }
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-btn.left { left: 5px; }
+.scroll-btn.right { right: 5px; }
+
+/* Optional: styled horizontal scrollbar */
+.image-scroll::-webkit-scrollbar { height: 6px; }
+.image-scroll::-webkit-scrollbar-thumb { background: #0077b6; border-radius: 3px; }
+.image-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
+
+/* Contact Email */
+.email a {
+  color: #0077b6;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.email a:hover { text-decoration: underline; }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #111;
+  background: #222;
   color: #fff;
   margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  /* allow wrapping when the viewport gets tighter */
+  .project-grid {
+    flex-wrap: wrap;
+  }
+  .project-card {
+    flex: 1 1 300px;   /* allow cards to wrap nicely */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h2 { font-size: 2rem; }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .project-card { flex: 1 1 100%; }
 }
