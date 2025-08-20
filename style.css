@@ -91,11 +91,37 @@ nav {
   max-width: 900px;
   margin: auto;
   text-align: center;
+  /* Prevent anchor jumps from hiding under sticky header */
+  scroll-margin-top: 80px;
 }
 
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.skills-list li {
+  background: #0077b6;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.skills-list li:hover {
+  background: #005f86;
 }
 
 /* Timeline / Experience */
