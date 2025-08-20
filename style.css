@@ -88,7 +88,7 @@ nav {
 /* Section */
 .section {
   padding: 60px 20px;
-  max-width: 1100px;   /* a bit wider to comfortably fit 3 cards */
+  max-width: 900px;
   margin: auto;
   text-align: center;
 }
@@ -110,16 +110,16 @@ nav {
   margin-bottom: 5px;
 }
 
-/* Projects - Flexbox layout */
+/* Projects - FLEXBOX for responsive layout */
 .project-grid {
   display: flex;
-  flex-wrap: nowrap;        /* keep all three on one row for desktop */
+  flex-wrap: nowrap;
   gap: 20px;
-  justify-content: center;  /* center the trio */
+  justify-content: center;
 }
 
 .project-card {
-  flex: 0 1 320px;          /* base width ~320px; don’t grow past */
+  flex: 0 1 300px;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -132,64 +132,17 @@ nav {
   transform: translateY(-5px);
 }
 
-/* Image Scroll Boxes with Buttons Inside */
-.image-scroll-wrapper {
-  position: relative;
+.project-card img {
   margin-top: 10px;
-}
-
-.image-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px 0;
-  scroll-behavior: smooth;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  position: relative;
-}
-
-.image-scroll img {
-  height: 150px;
-  border-radius: 8px;
-  flex-shrink: 0;
   transition: transform 0.3s;
 }
 
-.image-scroll img:hover {
+.project-card img:hover {
   transform: scale(1.05);
 }
-
-/* Scroll buttons inside image box */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);   /* transparent black; swap to rgba(0,119,182,.5) for blue */
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.3s;
-}
-
-.scroll-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.scroll-btn.left { left: 5px; }
-.scroll-btn.right { right: 5px; }
-
-/* Optional: styled horizontal scrollbar */
-.image-scroll::-webkit-scrollbar { height: 6px; }
-.image-scroll::-webkit-scrollbar-thumb { background: #0077b6; border-radius: 3px; }
-.image-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
 
 /* Contact Email */
 .email a {
@@ -199,7 +152,9 @@ nav {
   font-size: 1.2rem;
 }
 
-.email a:hover { text-decoration: underline; }
+.email a:hover {
+  text-decoration: underline;
+}
 
 /* Footer */
 footer {
@@ -210,23 +165,13 @@ footer {
   margin-top: 30px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1100px) {
-  /* allow wrapping when the viewport gets tighter */
+/* Responsive: allow wrapping on smaller screens */
+@media(max-width: 1000px) {
   .project-grid {
     flex-wrap: wrap;
-  }
-  .project-card {
-    flex: 1 1 300px;   /* allow cards to wrap nicely */
-  }
-}
-
-@media (max-width: 600px) {
-  .hero h2 { font-size: 2rem; }
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
   }
-  .project-card { flex: 1 1 100%; }
+  .project-card {
+    flex: 1 1 250px;
+  }
 }
